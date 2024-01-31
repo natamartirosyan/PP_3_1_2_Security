@@ -5,7 +5,8 @@
     <title>Edit the user</title>
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/admin/save}" th:object="${user}">
+<form th:method="POST" th:action="@{/admin/save}" th:object="${user}">
+    <input type="hidden" th:field="*{id}" th:value="${user.getId()}">
     <label for="name">Name</label>
     <input id="name" th:field="*{name}" type="text"/>
     <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
@@ -26,9 +27,16 @@
     <input type="text" th:field="*{password}" id="password"/>
     <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</div>
     <br>
+    <label>
+        <select th:name="roles" th:value="*{roles}">
+            <option th:each="role:${roles}" th:value="${role.id}" th:text="${role.role}" selected/>
+        </select>
+    </label>
     <input type="submit" value="Save user">
 </form>
 <br>
 <a href="/admin">Back to the list</a>
+<br>
+<a href="/logout">Logout</a>
 </body>
 </html>

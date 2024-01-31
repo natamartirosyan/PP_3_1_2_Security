@@ -31,8 +31,10 @@
         <option th:each="role:${roles}" th:value="${role.id}" th:text="${role.role}" selected/>
     </select>
     <input type="submit" value="Add user"/>
-    <a href="/admin">Back to the list</a>
-    <br>
-</form>
+    </form>
+<br>
+<a href="/admin">Back to the list</a>
+<br>
+<a href="/logout">Logout</a>
 </body>
 </html>

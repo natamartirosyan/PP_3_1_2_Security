@@ -21,7 +21,7 @@
         <td th:text="${user.getYearOfBirth()}"/>
         <td th:each="role:${user.roles}" th:text="${role.role}"/>
         <td>
-            <a th:href="@{/admin/save(id=${user.id})}">Edit user</a>
+            <a th:href="@{/admin/edit(id=${user.id})}">Edit user</a>
             <br>
             <a th:href="@{/admin/delete(id=${user.id})}">Delete user</a>
         </td>
