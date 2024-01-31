@@ -12,6 +12,7 @@ target/
 *.iws
 *.iml
 *.ipr
+/src/main/java/ru/kata/spring/boot_security/demo/dao/
 
 ### OS ###
 .Thumbs.db
@@ -23,3 +24,4 @@ target/
 *.war
 *.nar
 *.ear
+
