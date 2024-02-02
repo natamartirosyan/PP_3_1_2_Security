@@ -8,3 +8,11 @@
    Доступ к этой странице должен быть только у пользователей с ролью user и admin. Не забывайте про несколько ролей у пользователя!
 6. Настройте logout с любой страницы с использованием возможностей thymeleaf.
 7. Настройте LoginSuccessHandler так, чтобы админа после аутентификации направляло на страницу /admin, а юзера на его страницу /user.
+
+**Данные для проверки**
+1. Login: lukam 
+   Password: luka
+2. Login: sergior
+   Password: sergio
+3. Login: marcelo
+   Password: marcelo

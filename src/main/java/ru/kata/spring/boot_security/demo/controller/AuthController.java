@@ -13,14 +13,14 @@ import ru.kata.spring.boot_security.demo.service.UserServiceImpl;
 import javax.validation.Valid;
 
 @Controller
-public class AdminController {
+public class AuthController {
 
     private final UserServiceImpl userService;
     private final RoleServiceImpl roleService;
     private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public AdminController(UserServiceImpl userService, RoleServiceImpl roleService, PasswordEncoder passwordEncoder) {
+    public AuthController(UserServiceImpl userService, RoleServiceImpl roleService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.roleService = roleService;
         this.passwordEncoder = passwordEncoder;

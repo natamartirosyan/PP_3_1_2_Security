@@ -32,13 +32,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    //@Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public User findUserById(Long id) {
         return userRepo.getById(id);
     }
 
     @Override
-    //@Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public User findUserByLogin(String login) {
         return userRepo.findByLogin(login);
     }

@@ -1,3 +1,4 @@
+/*
 package ru.kata.spring.boot_security.demo.init;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,6 @@ public class DBInit {
         Role adminRole = new Role("ADMIN");
         Role userRole = new Role("USER");
 
-//        List<Role> roleList = new ArrayList<>();
-//        roleList.add(adminRole);
-//        roleList.add(userRole);
-
         roleService.addRole(adminRole);
         roleService.addRole(userRole);
 
@@ -46,3 +43,4 @@ public class DBInit {
                 "sergior@rmcf.com", "$2a$12$Hn8k63jCwVG25Dio.cSUleDDEYf2G695kMx3SSaEyFRwYhB/IvfLC", List.of(adminRole)));
     }
 }
+*/
