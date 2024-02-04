@@ -73,6 +73,7 @@ public class AuthController {
             model.addAttribute("roles", roleService.getListOfRoles());
             return "edit";
         }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userService.editUserById(user);
         return "redirect:/admin";
     }
