@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl  {//todo: в слое должна быть только бизнес-логика. implements UserService, UserDetailsService ...не нужны
+public class UserServiceImpl implements UserService  {//todo: в слое должна быть только бизнес-логика. implements UserService, UserDetailsService ...не нужны
 
     private final UserRepository userRepo;
 
@@ -56,15 +56,4 @@ public class UserServiceImpl  {//todo: в слое должна быть тол�
         return userRepo.findAll();
     }
 
-//    @Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
-        User user = userRepo.findByLogin(login);
-        if (user == null)
-            throw new UsernameNotFoundException("User not found!");
-
-        return new org.springframework.security.core.userdetails.User(//todo: в реальной практике так не делают и попросят переделать
-                user.getUsername(),
-                user.getPassword(),
-                user.getAuthorities());
-    }
 }

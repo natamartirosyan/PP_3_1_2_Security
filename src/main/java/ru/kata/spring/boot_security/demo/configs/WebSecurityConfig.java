@@ -45,22 +45,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userService);
-        authProvider.setPasswordEncoder(getPasswordEncoder());
-        return authProvider;
-    };
-
-    @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {//todo: это реализация security через config
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(
-                username -> Optional.of(userService.findByUsername(username))
+                username -> Optional.of(userService.findUserByLogin(username))
                         .orElseThrow(() -> new UsernameNotFoundException("User not found"))
         ).passwordEncoder(getPasswordEncoder());
     }

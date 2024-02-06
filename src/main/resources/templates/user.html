@@ -5,17 +5,24 @@
     <title>User info</title>
 </head>
 <body>
-<br>
-<!--/*@thymesVar id="getName" type=""*/-->
-<a th:text="${user.name}"></a>
-<br>
-<a th:text="${user.lastName}"></a>
-<br>
-<a th:text="${user.yearOfBirth}"></a>
-<br>
-<a th:text="${user.login}"></a>
-<br>
-<a th:text="${user.password}"></a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Year of birth</th>
+        <th>Login</th>
+        <th>Roles</th>
+    </tr>
+    <tr>
+        <td th:text="${user.getId()}"/>
+        <td th:text="${user.getName()}"/>
+        <td th:text="${user.getLastName()}"/>
+        <td th:text="${user.getYearOfBirth()}"/>
+        <td th:text="${user.login}"/>
+        <td th:each="role:${user.roles}" th:text="${role.role}"/>
+    </tr>
+</table>
 <br>
 <a href="/logout">Logout</a>
 </body>

@@ -1,3 +1,14 @@
+drop table if exists role, user, user_roles;
+
+create table if not exists user (id bigint not null primary key auto_increment,
+    first_name varchar(255) not null, last_name varchar(255) not null, year_of_birth int not null,
+    login varchar(255) not null, password varchar(255) not null);
+
+create table if not exists role (id int not null primary key auto_increment, role varchar(255) not null);
+
+create table if not exists user_roles (user_id bigint, foreign key (user_id) references user(id),
+    role_id int, foreign key (user_id) references user(id));
+
 insert into user (first_name, last_name, year_of_birth, login, password)
 values ('Luka', 'Modric', 1985, 'lukam', '$2a$12$dr5y9Is2wyv6CbjvDNnOiOQEKRcbxtIMJpePoA69xX/89S41MdMG.');
 insert into user (first_name, last_name, year_of_birth, login, password)
