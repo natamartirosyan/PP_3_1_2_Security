@@ -24,7 +24,7 @@
     <div style="color:red" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">Error</div>
     <br>
     <label for="password">Password</label>
-    <input type="text" th:field="*{password}" id="password"/>
+    <input type="password" th:field="*{password}" id="password"/>
     <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</div>
     <br>
     <select th:name="roles" th:value="*{roles}">
